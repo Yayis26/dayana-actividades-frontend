@@ -1,8 +1,16 @@
 import { Search, User } from "lucide-react";
 import { Link, Links } from "react-router-dom";
+import { useState } from "react";
+
 
 
 const Navbar = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+
+
+
   return (
     <nav className="w-full border-b bg-white">
       <div className="mx-auto max-w-7xl px-4">
@@ -60,9 +68,47 @@ const Navbar = () => {
 
 
             {/* Icono de usuario */}
-            <button className="flex items-center justify-center size-10 rounded-full border hover:bg-gray-100 transition">
+            {/* <button className="flex items-center justify-center size-10 rounded-full border hover:bg-gray-100 transition">
               <User className="size-5" />
-            </button>
+            </button> */}
+
+            {/* Usuario */}
+            <div className="relative">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center justify-center size-10 rounded-full border hover:bg-surface transition"
+              >
+                <User className="size-5" />
+              </button>
+
+
+              {isOpen && (
+                <div className="absolute right-0 mt-2 w-48 rounded-lg border bg-background shadow-lg">
+                  <ul className="py-2 text-sm">
+                    <li>
+                      <Link
+                        to="/perfil"
+                        className="block px-4 py-2 hover:bg-surface transition"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Perfil
+                      </Link>
+                    </li>
+                    <li>
+                      <button
+                        className="w-full text-left px-4 py-2 hover:bg-surface transition"
+                        onClick={() => {
+                          setIsOpen(false);
+                          console.log("Cerrar sesión");
+                        }}
+                      >
+                        Cerrar sesión
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
 
 
           </div>
@@ -74,3 +120,6 @@ const Navbar = () => {
 
 
 export default Navbar;
+
+//Para navegar a una ruta uso LINK 
+//Para ejecutar lógica se utiliza BUTTON
