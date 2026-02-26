@@ -57,6 +57,9 @@
     --semantic-action-secondary-bg: var(--color-gray-800);
     --semantic-action-secondary-hover-bg: var(--color-gray-200);
 
+    /*BACKGROUND COLOR*/
+
+    --semantic-bgcolor: var(--color-primary-400);
   
 
 
