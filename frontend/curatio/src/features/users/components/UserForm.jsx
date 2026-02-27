@@ -5,7 +5,18 @@ export default function UserForm() {
     <div>
       {/*Formulario para crear el usuario REALIZADO POR JHONIER G */}
 
-      <form>
+      <form className="
+        px-6 py-12 
+        grid grid-cols-1 
+        gap-6
+        bg-white/70
+        dark:bg-neutral-900/30
+        backdrop-blur-md
+        shadow-xl
+        ring-1
+        rounded-3xl
+      
+        ">
         {/*DATOS BASICOS */}
         <Input
           label="Nombre y Apellidos"
@@ -50,20 +61,6 @@ export default function UserForm() {
           name="confirmEmail">
         </Input>
 
-        {/*DATOS DE 1ROL*/}
-        <Input
-          label="fecha de inicio"
-          placeholder="2023-01-01"
-          type="date"
-          name="startDate">
-        </Input>
-
-        <Input
-          label="fecha de fin"
-          placeholder="2023-12-31"
-          type="date"
-          name="endDate">
-        </Input>
 
 
 

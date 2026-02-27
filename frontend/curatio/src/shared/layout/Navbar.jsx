@@ -9,24 +9,24 @@ const Navbar = ({variant = "solid"}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    //Estos son los estilos del navbar para que quede transparente 
-    <nav className= {`w-full border-b transition-colors duration-300 ${
-      variant === "transparent"
-      ? "bg-transparent border-transparent absolute top-0 left-0 z-30"
-      : "bg-background border-border"
-    }`}>
+    //Estos son los estilos del navbar para que quede transparente
+    <nav
+      className={`w-full border-b transition-colors duration-300 ${
+        variant === "transparent"
+          ? "bg-transparent border-transparent absolute top-0 left-0 z-30"
+          : "bg-background border-border"
+      }`}
+    >
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
-          
           {/* Logo de marca */}
           <div className="flex items-center">
-            <li> 
+            <li>
               <Link to="/" className="text-xl font-bold">
-              Rico Programar
+                Rico Programar
               </Link>
             </li>
           </div>
-
 
           {/* Links de navegación */}
           <ul className="hidden md:flex items-center gap-6">
@@ -47,19 +47,17 @@ const Navbar = ({variant = "solid"}) => {
             </li>
             <li>
               <Link to="/contacto" className="hover:text-primary transition">
-                Contacto                           
+                Contacto
               </Link>
             </li>
           </ul>
 
-
           {/* Sección derecha: búsqueda + usuario */}
           <div className="flex items-center gap-4">
-            
             {/* Buscador */}
             <div className="relative hidden sm:block">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-gray-500" />
-            
+
               <input
                 type="text"
                 placeholder="Buscar..."
@@ -67,7 +65,6 @@ const Navbar = ({variant = "solid"}) => {
                  py-2.5 border rounded-lg text-body focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
-
 
             {/* Icono de usuario */}
             {/* <button className="flex items-center justify-center size-10 rounded-full border hover:bg-gray-100 transition">
@@ -83,22 +80,36 @@ const Navbar = ({variant = "solid"}) => {
                 <User className="size-5" />
               </button>
 
-
               {isOpen && (
-                <div className="absolute right-0 mt-2 w-48 rounded-lg border bg-background shadow-lg">
+                <div
+                  className="
+                      px-6 py-6
+                      grid grid-cols-1 
+                      gap-6
+                    bg-white/70
+                    dark:bg-neutral-900/30
+                      backdrop-blur-md
+                      shadow-xl
+                      ring-1
+                      rounded-3xl
+                      absolute right-0 mt-2 w-48 
+                      rounded-lg border
+                      bg-background 
+                      shadow-lg"
+                >
                   <ul className="py-2 text-sm">
                     <li>
                       <Link
-                        to="/perfil"
-                        className="block px-4 py-2 hover:bg-surface transition"
+                        to="/login"
+                        className="block px-4 py-2 hover:bg-black transition"
                         onClick={() => setIsOpen(false)}
                       >
-                        Perfil
+                        Login
                       </Link>
                     </li>
                     <li>
                       <button
-                        className="w-full text-left px-4 py-2 hover:bg-surface transition"
+                        className="w-full text-left px-4 py-2 hover:bg-black transition"
                         onClick={() => {
                           setIsOpen(false);
                           console.log("Cerrar sesión");
@@ -111,8 +122,6 @@ const Navbar = ({variant = "solid"}) => {
                 </div>
               )}
             </div>
-
-
           </div>
         </div>
       </div>
