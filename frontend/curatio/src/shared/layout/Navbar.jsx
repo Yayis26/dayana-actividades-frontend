@@ -4,15 +4,17 @@ import { useState } from "react";
 
 
 
-const Navbar = () => {
+const Navbar = ({variant = "solid"}) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-
-
-
   return (
-    <nav className="w-full border-b bg-white">
+    //Estos son los estilos del navbar para que quede transparente 
+    <nav className= {`w-full border-b transition-colors duration-300 ${
+      variant === "transparent"
+      ? "bg-transparent border-transparent absolute top-0 left-0 z-30"
+      : "bg-background border-border"
+    }`}>
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
           
