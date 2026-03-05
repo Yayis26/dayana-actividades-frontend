@@ -1,4 +1,4 @@
-import Navbar from "@/shared/layout/Navbar.jsx";
+import Navbar from "@/layouts/Navbar.jsx";
 import { Outlet, useLocation } from "react-router-dom";
 // import heroBg from "@/assets/images/10-imagen-hero.jpg"
 

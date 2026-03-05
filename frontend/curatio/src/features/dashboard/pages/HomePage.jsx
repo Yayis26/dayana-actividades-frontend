@@ -21,6 +21,7 @@ export default function HomePage(){
                     Aprende según tus gustos, desde panadería hasta control numérico
                 </p>
             </div>
+
         </section>
     )
 }
