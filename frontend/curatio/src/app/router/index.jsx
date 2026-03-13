@@ -1,8 +1,12 @@
 import {createBrowserRouter} from "react-router-dom"
 import MainLayout from "@/layouts/MainLayout"
 import ProfilePage from "../../features/users/pages/ProfilePage";
-import HomePage from "../../features/dashboard/pages/HomePage";
+import HomePage from "../../features/home/pages/HomePage";
 import AuthLayout from "@/layouts/AuthLayout";
+import CreateSuppliers from "../../features/suppliers/CreateSuppliers";
+import {ConfigUserPage} from "../../features/users";
+import ListUserPage from "../../features/users/pages/ListUserPage";
+import {CreateUserPage} from  "@/features/users"  
 
 const router = createBrowserRouter([
     {
@@ -13,16 +17,20 @@ const router = createBrowserRouter([
                     element: <HomePage/>
                 },
                 {
-                    path:"cursos",
-                    element: <h1 className="p-4">Cursos</h1>
+                    path: "login",
+                    element: <CreateUserPage/>
                 },
                 {
-                    path:"contacto",
-                    element: <h1 className="p-4">Contacto</h1>
+                    path:"usuario",
+                    element: <ConfigUserPage/>
                 },
                 {
-                    path:"video",
-                    element: <h1 className="p-4">Videos</h1>
+                    path:"users/:id/edit/",
+                    element: <HomePage/>
+                },
+                {
+                    path:"/users/:id/delete/",
+                    element: <HomePage/>
                 },
                 {
                     path:"perfil",

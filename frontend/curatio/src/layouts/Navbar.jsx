@@ -36,8 +36,8 @@ const Navbar = ({variant = "solid"}) => {
               </Link>
             </li>
             <li>
-              <Link to="/cursos" className="hover:text-primary transition">
-                Cursos
+              <Link to="/usuario" className="hover:text-primary transition">
+                usuario
               </Link>
             </li>
             <li>

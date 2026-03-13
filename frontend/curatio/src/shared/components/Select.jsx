@@ -1,4 +1,4 @@
-export default function Select({ label, name, options = [] }) {
+export default function Select({ label, name, value, error, onChange, options = [] }) {
   return (
     <div className="w-[320px]">
       {/*Label si el label tiene contenido es igual a truthy si no es Falsy y no muestra el label */}
@@ -9,6 +9,8 @@ export default function Select({ label, name, options = [] }) {
       )}
 
       <select
+        value = {value}
+        onChange={onChange}
         name={name}
         className="
                 w-full 
@@ -23,15 +25,16 @@ export default function Select({ label, name, options = [] }) {
         {options.map((option) =>{
 
           return (
-               <options key= {option.id} value={option.id}>
+               <option key= {option.id} value={option.id}>
                     {option.label}
-                </options>
+                </option>
               )
         }) 
       };  
       
 
       </select>
+      {error && <p className="text-mostsmall text-red-600 mt-1">{error}</p>}
     </div>
   );
 }

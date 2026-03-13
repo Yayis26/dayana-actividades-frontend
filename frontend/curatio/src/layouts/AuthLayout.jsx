@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom";
-import authBg from "@/assets/images/11-auth-background.jpg"
+import authBg from "@/assets/images/imagen-hero.jpg"
 // import heroBg from "@/assets/images/10-imagen-hero.jpg"
+
 import { UserForm } from "@/features/users";
+
 export default function AuthLayout(){
     
 
