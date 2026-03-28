@@ -21,6 +21,10 @@ const router = createBrowserRouter([
                     element: <CreateUserPage/>
                 },
                 {
+                    path: "listar",
+                    element: <ListUserPage/>
+                },
+                {
                     path:"usuario",
                     element: <ConfigUserPage/>
                 },

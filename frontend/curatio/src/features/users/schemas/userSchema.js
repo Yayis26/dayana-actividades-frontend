@@ -1,6 +1,6 @@
 import {z} from "zod";
 
-export const userSchema = z.object({
+export const UserSchema = z.object({
     name: z.string()
         .min(3, "El nombre de tener mínimo 3 caracteres")
         .max(60, "El nombre es demasiado largo"),

@@ -1,12 +1,19 @@
 import { Search, User } from "lucide-react";
 import { Link, Links } from "react-router-dom";
 import { useState } from "react";
-
+import {
+    IconButton,
+    //IconAction,
+    Dropdown,
+    DropdownTrigger,
+    DropdownContent, 
+    DropdownItem
+} from "@/shared/components";
 
 
 const Navbar = ({variant = "solid"}) => {
 
-  const [isOpen, setIsOpen] = useState(false);
+ // const [isOpen, setIsOpen] = useState(false);
 
   return (
     //Estos son los estilos del navbar para que quede transparente
@@ -72,7 +79,7 @@ const Navbar = ({variant = "solid"}) => {
             </button> */}
 
             {/* Usuario */}
-            <div className="relative">
+            {/* <div className="relative">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center justify-center size-10 rounded-full border hover:bg-surface transition"
@@ -121,6 +128,32 @@ const Navbar = ({variant = "solid"}) => {
                   </ul>
                 </div>
               )}
+            </div> */}
+            {/*=====Dropdpwn ====*/}
+            <div className="p-10">
+              <Dropdown>
+                <DropdownTrigger>
+                  <IconButton ariaLabel = "Menú de usuario">
+                    <User/>
+                  </IconButton>
+                </DropdownTrigger>
+
+                <DropdownContent className= "right-0 w-48">
+                  <DropdownItem>
+                    <Link to = "/login" className="block w-full">
+                    Perfil
+                    </Link>
+                  </DropdownItem>
+
+                </DropdownContent>
+                <DropdownContent className= "right-0 w-48">
+                  <DropdownItem>
+                    <Link to = "/" className="block w-full">
+                    Inicio
+                    </Link>
+                  </DropdownItem>
+                </DropdownContent>
+              </Dropdown>
             </div>
           </div>
         </div>
